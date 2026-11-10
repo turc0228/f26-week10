@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -24,8 +92,17 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
@@ -33,16 +110,20 @@ body {
     line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
 
-blockquote::before, blockquote::after,
-q::before, q::after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
     content: "";
     content: none;
 }
@@ -56,46 +137,48 @@ table {
         MAIN STYLES
 **************************/
 
-.container{
+.container {
     /* always give your site a maximum width */
     max-width: 900px;
     margin: 0 auto;
     background: lightsteelblue;
 }
 
-h1{
+h1 {
     font-size: 2.2em;
     /* an em is always relative to the current font size, which by default is set to 16px (2.2 x 16px = 35.2px) */
 
     /* you can set padding and margin based on an element's font size with em... */
-    padding: 0.5em; /* 0.5 x 35.2px = 17.6px */
+    padding: 0.5em;
+    /* 0.5 x 35.2px = 17.6px */
 
     /* an rem is relative to the root foot size (either the default of 16px, or whatever font size you set on the html tag */
-    margin-bottom: 1rem; /* 1rem x 16px = 16px */
+    margin-bottom: 1rem;
+    /* 1rem x 16px = 16px */
 }
 
-h3{
+h3 {
     font-size: 1.6rem;
     padding: 0.5rem;
 }
 
-article div{
+article div {
     font-size: 36px;
     padding: 10px;
     border: 2px solid darkslateblue;
     background-color: skyblue;
 }
 
-section:nth-of-type(1) article{
+section:nth-of-type(1) article {
     /* nth-child selects an element based on its position in its parent, regardless of what type of elements are there.
     nth-of-type will only select the element at that position if it matches the element type */
-    
+
     /* display flex, by default, makes things sit next to each other... */
-    display:flex;
+    display: flex;
 }
 
 section:nth-of-type(2) article {
-    display:flex;
+    display: flex;
     /* the direction of the flex is relative to the language the site is written in */
     flex-direction: row-reverse;
 
@@ -103,47 +186,93 @@ section:nth-of-type(2) article {
 }
 
 section:nth-of-type(3) article {
-    display:flex;
+    display: flex;
 
     /* there are multiple ways to space the elements in your flexbox (or to justify the content) 
         - flex start, flex-end, and center which move the content around
         - space-between spreads the elements out with an equal amount of space between them
         - space-around spreads the elements out with an equal amount of space on either side of each element
         - space-evenly equally distributes the elements within the available space */
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 section:nth-of-type(4) article {
-    display:flex;
+    display: flex;
 
     /* you can also add a little bit of space between the objects with gap */
-    gap:4px;
+    gap: 4px;
 }
 
 /* you can tell each object inside the flex to grow to take up the available space */
-section:nth-of-type(4) article div{
+section:nth-of-type(4) article div {
     flex-grow: 1;
 }
 
 /* you can tell individual objects to take up more (or less) space than other objects... */
-section:nth-of-type(4) article div:nth-of-type(2){
-    flex-grow:2;
+section:nth-of-type(4) article div:nth-of-type(2) {
+    flex-grow: 2;
 }
 
 /**************************
     FLEX EXAMPLE FOR NAV
 **************************/
 
-nav ul{
+nav ul {
     /* make the list items inside the ul sit next to each other */
-    display:flex;
+    display: flex;
+
+    /* you can tell the objects to wrap to the next line (row or column) if they no longer fit inside the flexbox */
+    flex-wrap: wrap;
 
     /* justify-content:space-evenly; 
     ... this would be good if you wanted a text-based nav */
 }
 
 /* ... we can also use flex to make the nav look more like buttons */
-nav ul li{
-    flex-grow:1;
+nav ul li {
+    flex-grow: 1;
     background-color: lightpink;
+
+    /* you can put a flexbox inside of a flexbox */
+    display: flex;
+}
+
+nav ul li a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1em;
+}
+
+nav ul li a:hover {
+    background-color: palevioletred;
+}
+
+/**************************
+        MEDIA QUERIES
+**************************/
+
+/* at a minimum of 640px, and above, apply these styles */
+@media screen and (min-width:640px) {
+
+    /* apply flexbox to the div with the class flexer, which contains the main and the aside, so the main and aside will sit next to each other */
+    .flexer {
+        display: flex;
+    }
+}
+
+/* using flex-grow, weight the main and aside */
+main {
+    flex-grow: 4;
+
+    /* make the content in the main distributed vertically to take up as much space as the sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* default order is 1, so by setting this to 2, we move it after the aside */
+    order:2;
+}
+
+aside {
+    flex-grow: 1;
 }
